@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10111c">
+  <meta name="description" content="Get in touch. We would love to hear from you.">
+  <title>Contact — Hello, world!</title>
+  <style>
+    :root { color-scheme:dark; --ink:#f8f7ff; --muted:#b8b6ca; --line:rgba(255,255,255,.14); --mint:#91f4d2; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; overflow-x:hidden; padding:28px; color:var(--ink); background:#10111c; font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    body::before,body::after { position:fixed; z-index:-1; content:""; width:min(58vw,720px); aspect-ratio:1; border-radius:50%; filter:blur(100px); opacity:.36; animation:drift 15s ease-in-out infinite alternate; }
+    body::before { background:#7052eb; top:-34%; left:-18%; } body::after { background:#187c84; bottom:-45%; right:-14%; animation-delay:-7s; }
+    .grain { position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.13; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E"); }
+    .card { width:min(100%,760px); padding:clamp(30px,6vw,66px); border:1px solid var(--line); border-radius:30px; background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.035)); box-shadow:0 32px 100px rgba(0,0,0,.34),inset 0 1px rgba(255,255,255,.12); backdrop-filter:blur(22px); animation:arrive .8s cubic-bezier(.2,.8,.2,1) both; }
+    .site-nav { display:flex; justify-content:flex-end; gap:8px; margin:-8px -8px 48px 0; }
+    .site-nav a { color:var(--muted); text-decoration:none; font-size:.9rem; padding:9px 13px; border-radius:99px; transition:color .2s,background .2s; }
+    .site-nav a:hover,.site-nav a[aria-current="page"] { color:var(--ink); background:rgba(255,255,255,.1); }
+    .site-nav a:focus-visible,.email-link:focus-visible { outline:2px solid var(--mint); outline-offset:3px; }
+    .eyebrow { display:flex; align-items:center; gap:10px; margin:0 0 24px; color:var(--mint); font-size:.76rem; font-weight:700; letter-spacing:.17em; text-transform:uppercase; }
+    .spark { width:8px; height:8px; border-radius:50%; background:var(--mint); box-shadow:0 0 16px var(--mint); }
+    h1 { margin:0; font-size:clamp(3.2rem,9vw,6.2rem); line-height:.98; letter-spacing:-.075em; font-weight:760; }
+    h1 span { display:block; color:transparent; background:linear-gradient(100deg,#c9b7ff 8%,#9fdfff 53%,#a5f5d9 100%); -webkit-background-clip:text; background-clip:text; }
+    .intro { max-width:520px; margin:26px 0 0; color:var(--muted); font-size:clamp(1rem,2.2vw,1.15rem); line-height:1.8; }
+    .contact-box { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:34px; padding:20px 22px; border:1px solid rgba(255,255,255,.12); border-radius:18px; background:rgba(255,255,255,.045); }
+    .contact-box small { display:block; margin-bottom:7px; color:#9694a9; font-size:.72rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+    .email-link { color:var(--ink); font-size:clamp(1rem,3vw,1.25rem); text-decoration:none; overflow-wrap:anywhere; }
+    .email-link:hover { color:var(--mint); } .arrow { color:var(--mint); font-size:1.4rem; }
+    .note { margin:15px 0 0; color:#9694a9; font-size:.88rem; line-height:1.6; }
+    .footer { display:flex; justify-content:space-between; gap:14px; margin-top:46px; padding-top:19px; border-top:1px solid rgba(255,255,255,.11); color:#9694a9; font-size:.78rem; letter-spacing:.04em; }
+    .footer a { color:#c3bfd5; text-decoration:none; } .footer a:hover { color:var(--mint); }
+    @keyframes arrive { from { opacity:0; transform:translateY(18px) scale(.985); } to { opacity:1; transform:none; } } @keyframes drift { to { transform:translate(9%,8%) scale(1.12); } }
+    @media(max-width:520px) { body { padding:18px; } .card { border-radius:24px; } .site-nav { margin-bottom:38px; } .contact-box { padding:17px; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="card">
+    <nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html" aria-current="page">Contact</a></nav>
+    <p class="eyebrow"><span class="spark" aria-hidden="true"></span> Your turn</p>
+    <h1>Let’s talk<span>and connect.</span></h1>
+    <p class="intro">Have a question, an idea, or just want to say hello? Drop a note—we’d love to hear what you’re thinking.</p>
+    <div class="contact-box">
+      <div><small>Send us a note</small><a class="email-link" href="mailto:hello@example.com">hello@example.com</a></div>
+      <span class="arrow" aria-hidden="true">↗</span>
+    </div>
+    <p class="note">The address is a sample—replace it with your own email when you’re ready.</p>
+    <footer class="footer"><span>MADE WITH CURIOSITY</span><a href="about.html">A bit about us ↗</a></footer>
+  </main>
+</body>
+</html>
